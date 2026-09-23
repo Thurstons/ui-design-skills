@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Intent Translator"
+  short_description: "将用户白话 UI 反馈转换为专业、结构化且无歧义的设计意图简报"
+  default_prompt: "Use $ui-intent-translator to turn my plain-language UI feedback into a structured design brief."
