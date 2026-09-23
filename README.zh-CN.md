@@ -2,6 +2,8 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 一套面向 Codex 等 AI Coding Agent 的三阶段 UI 设计工作流，把模糊的自然语言反馈逐步转换为可执行规范，并对最终实现进行验收。
 
 ```text
@@ -74,6 +76,6 @@ Skills 默认允许自动发现；在意图明确时，Agent 也可自动选择�
 - Reviewer 必须区分“实现不符合规范”和“规范本身需要修订”。
 - 没有证据时标记为 `unverified`，不把推测写成事实。
 
-## 发布前
+## 许可证
 
-公开发布前请补充你选择的开源许可证，并根据实际使用反馈迭代术语表和规则。不要把单个项目的品牌 Token 写成所有项目都必须遵循的通用规则。
+本项目采用 [Apache License 2.0](LICENSE) 开源许可证。

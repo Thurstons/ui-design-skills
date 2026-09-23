@@ -2,6 +2,8 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
 A three-stage UI design workflow for Codex and other AI coding agents. It turns ambiguous, plain-language feedback into implementation-ready specifications and then reviews the finished UI against those specifications.
 
 ```text
@@ -77,6 +79,6 @@ Each skill includes:
 - Require the Reviewer to distinguish implementation nonconformance from a specification that may need revision.
 - Mark missing evidence as `unverified` instead of presenting inference as fact.
 
-## Before Publishing
+## License
 
-Choose and add an open-source license before making the repository public. Evolve terminology and rules from real usage, and avoid turning one product's brand tokens into universal requirements.
+Licensed under the [Apache License 2.0](LICENSE).
