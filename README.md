@@ -28,9 +28,27 @@ Spec vs Actual + Fix Plan
 
 The responsibilities remain separate: the Translator does not invent CSS values, the Generator does not reinterpret the user's original intent, and the Reviewer does not silently redesign the interface during acceptance review.
 
-## Installation
+## Quick installation with Codex
 
-Copy the desired skill folders into your personal Codex skills directory:
+Send this message to Codex to install all three skills from GitHub:
+
+```text
+Use $skill-installer to install these three skills from
+https://github.com/Thurstons/ui-design-skills:
+skills/ui-intent-translator, skills/ui-design-spec-generator, and
+skills/ui-design-reviewer. Tell me when the installation finishes.
+```
+
+Start a new Codex conversation after installation so the skills become available.
+
+## Manual installation
+
+Clone this repository, then copy the skill folders into your personal Codex skills directory:
+
+```bash
+git clone https://github.com/Thurstons/ui-design-skills.git
+cd ui-design-skills
+```
 
 ```bash
 cp -R skills/ui-intent-translator ~/.codex/skills/

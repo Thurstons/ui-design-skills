@@ -28,9 +28,27 @@ Spec vs Actual + Fix Plan
 
 三个 Skill 职责彼此隔离：Translator 不输出 CSS 数值，Generator 不重新猜用户原意，Reviewer 不在验收时擅自改设计方向。
 
-## 安装
+## 使用 Codex 快速安装
 
-将需要的 Skill 文件夹复制到 Codex 的个人 Skill 目录：
+直接把下面这段消息发送给 Codex，即可从 GitHub 一次安装三个 Skill：
+
+```text
+请使用 $skill-installer 从 https://github.com/Thurstons/ui-design-skills
+安装以下三个 Skill：skills/ui-intent-translator、
+skills/ui-design-spec-generator、skills/ui-design-reviewer。
+安装完成后告诉我结果。
+```
+
+安装完成后开启一个新的 Codex 对话，即可使用这些 Skill。
+
+## 手动安装
+
+先克隆仓库，再将三个 Skill 文件夹复制到 Codex 的个人 Skill 目录：
+
+```bash
+git clone https://github.com/Thurstons/ui-design-skills.git
+cd ui-design-skills
+```
 
 ```bash
 cp -R skills/ui-intent-translator ~/.codex/skills/
