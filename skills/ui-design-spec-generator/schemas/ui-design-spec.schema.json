@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/ui-design-spec.schema.json",
+  "title": "UI Design Specification",
+  "type": "object",
+  "required": ["ui_design_spec"],
+  "properties": {
+    "ui_design_spec": {
+      "type": "object",
+      "required": ["metadata", "design_direction", "layout_system", "spacing_system", "typography_system", "color_system", "components", "interaction", "responsive_rules", "do", "dont", "acceptance_criteria"],
+      "properties": {
+        "metadata": {"type": "object", "required": ["status", "assumptions", "token_provenance"], "properties": {"source_brief": {"type": "string"}, "status": {"enum": ["draft", "approved", "revised"]}, "assumptions": {"type": "array", "items": {"type": "string"}}, "token_provenance": {"type": "object"}}, "additionalProperties": true},
+        "design_direction": {"type": "object", "required": ["style", "principles"], "properties": {"style": {"type": "string"}, "principles": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": true},
+        "layout_system": {"type": "object"},
+        "spacing_system": {"type": "object"},
+        "typography_system": {"type": "object"},
+        "color_system": {"type": "object"},
+        "components": {"type": "object"},
+        "interaction": {"type": "object"},
+        "responsive_rules": {"type": "object"},
+        "do": {"type": "array", "items": {"type": "string"}},
+        "dont": {"type": "array", "items": {"type": "string"}},
+        "acceptance_criteria": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "criterion", "verification"], "properties": {"id": {"type": "string", "pattern": "^AC-[0-9]{3,}$"}, "criterion": {"type": "string"}, "verification": {"type": "string"}}, "additionalProperties": false}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

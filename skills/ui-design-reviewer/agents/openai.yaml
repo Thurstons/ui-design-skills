@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Design Reviewer"
+  short_description: "依据设计规范审查页面实现，定位差异并输出分级修复与验收计划"
+  default_prompt: "Use $ui-design-reviewer to review this UI implementation against its design specification."
