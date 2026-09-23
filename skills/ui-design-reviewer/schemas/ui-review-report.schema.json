@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/ui-review-report.schema.json",
+  "title": "UI Review Report",
+  "type": "object",
+  "required": ["ui_review_report"],
+  "properties": {
+    "ui_review_report": {
+      "type": "object",
+      "required": ["review_summary", "scope", "dimension_coverage", "spec_vs_actual", "issues", "fix_plan", "code_changes", "spec_revision_suggestions", "retest_checklist", "unverified"],
+      "properties": {
+        "review_summary": {"type": "object", "required": ["overall_status", "total_issues", "critical", "major", "minor", "suggestion"], "properties": {"overall_status": {"enum": ["pass", "partial_pass", "fail", "baseline_audit"]}, "total_issues": {"type": "integer", "minimum": 0}, "critical": {"type": "integer", "minimum": 0}, "major": {"type": "integer", "minimum": 0}, "minor": {"type": "integer", "minimum": 0}, "suggestion": {"type": "integer", "minimum": 0}}, "additionalProperties": false},
+        "scope": {"type": "object", "required": ["viewports", "evidence_sources", "limitations"], "properties": {"spec_version": {"type": "string"}, "implementation_version": {"type": "string"}, "viewports": {"type": "array", "items": {"type": "string"}}, "evidence_sources": {"type": "array", "items": {"type": "string"}}, "limitations": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": true},
+        "dimension_coverage": {"type": "object"},
+        "spec_vs_actual": {"type": "array", "items": {"type": "object", "required": ["item", "specification", "actual", "evidence_level", "status"], "properties": {"criterion_id": {"type": "string"}, "item": {"type": "string"}, "specification": {"type": "string"}, "actual": {"type": "string"}, "evidence_level": {"enum": ["measured", "observed", "inferred", "unverified"]}, "status": {"enum": ["pass", "fail", "partial", "unverified", "not_applicable"]}}, "additionalProperties": true}},
+        "issues": {"type": "array", "items": {"type": "object", "required": ["id", "type", "severity", "category", "specification", "actual", "evidence", "evidence_level", "location", "impact", "recommendation", "expected"], "properties": {"id": {"type": "string", "pattern": "^UI-[0-9]{3,}$"}, "type": {"enum": ["implementation_nonconformance", "baseline_finding"]}, "severity": {"enum": ["critical", "major", "minor", "suggestion"]}, "category": {"type": "string"}, "specification": {"type": "string"}, "actual": {"type": "string"}, "evidence": {"type": "string"}, "evidence_level": {"enum": ["measured", "observed"]}, "location": {"type": "string"}, "affected_scope": {"type": "array", "items": {"type": "string"}}, "impact": {"type": "string"}, "recommendation": {"type": "string"}, "expected": {"type": "string"}}, "additionalProperties": true}},
+        "fix_plan": {"type": "object", "required": ["priority_1", "priority_2", "priority_3"], "properties": {"priority_1": {"type": "array", "items": {"type": "string"}}, "priority_2": {"type": "array", "items": {"type": "string"}}, "priority_3": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false},
+        "code_changes": {"type": "array", "items": {"type": "object"}},
+        "spec_revision_suggestions": {"type": "array", "items": {"type": "object"}},
+        "retest_checklist": {"type": "array", "items": {"type": "string"}},
+        "unverified": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

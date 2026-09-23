@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Design Spec Generator"
+  short_description: "将结构化设计意图转换为前端可执行、可验收的完整 UI 设计规范"
+  default_prompt: "Use $ui-design-spec-generator to turn this design brief into an implementation-ready UI specification."

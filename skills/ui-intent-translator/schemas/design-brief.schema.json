@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/ui-design-brief.schema.json",
+  "title": "UI Design Brief",
+  "type": "object",
+  "required": ["ui_design_brief"],
+  "properties": {
+    "ui_design_brief": {
+      "type": "object",
+      "required": ["context", "user_intent", "problems", "visual_direction", "constraints", "ambiguity", "handoff"],
+      "properties": {
+        "context": {"type": "object", "required": ["page_type", "primary_task", "evidence"], "properties": {"page_type": {"type": "string"}, "primary_task": {"type": "string"}, "audience": {"type": "string"}, "evidence": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": true},
+        "user_intent": {"type": "object", "required": ["summary"], "properties": {"summary": {"type": "string"}, "priority": {"type": "string"}}, "additionalProperties": true},
+        "problems": {"type": "array", "items": {"type": "object", "required": ["original_expression", "professional_terms", "interpretation", "evidence_level", "severity"], "properties": {"original_expression": {"type": "string"}, "professional_terms": {"type": "array", "items": {"type": "string"}}, "interpretation": {"type": "string"}, "evidence_level": {"enum": ["observed", "reported", "inferred", "unknown"]}, "severity": {"enum": ["low", "medium", "high"]}}, "additionalProperties": false}},
+        "visual_direction": {"type": "object", "required": ["style_keywords", "reference_traits"], "properties": {"style_keywords": {"type": "array", "items": {"type": "string"}}, "reference_traits": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": true},
+        "layout": {"type": "object"},
+        "typography": {"type": "object"},
+        "color": {"type": "object"},
+        "components": {"type": "object"},
+        "interaction": {"type": "object"},
+        "ux": {"type": "object"},
+        "constraints": {"type": "object", "required": ["must_keep", "must_avoid"], "properties": {"must_keep": {"type": "array", "items": {"type": "string"}}, "must_avoid": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false},
+        "ambiguity": {"type": "object", "required": ["assumptions", "unresolved"], "properties": {"assumptions": {"type": "array", "items": {"type": "string"}}, "unresolved": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false},
+        "handoff": {"type": "object", "required": ["specification_focus"], "properties": {"specification_focus": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
